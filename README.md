@@ -1,3 +1,5 @@
+[![CI with Gradle](https://github.com/iamHrithikRaj/sip_managment/actions/workflows/gradle.yml/badge.svg)](https://github.com/iamHrithikRaj/sip_managment/actions/workflows/gradle.yml)
+
 <img width="200px" align="right" alt="mew" src="./assets/art.png" title="art"/>
 
 # SIP Management API
