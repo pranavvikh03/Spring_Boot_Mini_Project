@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import java.io.Serializable;
 
 @Entity
 @Data
@@ -19,7 +21,7 @@ import javax.persistence.*;
                 columnNames = "email"
         )
 )
-public class User {
+public class User implements Serializable {
     @Id
     @SequenceGenerator(
             name ="user_sequence",
@@ -34,6 +36,7 @@ public class User {
     private Long userId;
 
     @Embedded
+    @Valid
     private UserDetails userDetails;
 
 

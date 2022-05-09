@@ -1,11 +1,13 @@
 package com.paytmmoney.sipmanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.util.List;
 
 @Entity
@@ -28,18 +30,18 @@ public class Portfolio {
     private Long portfolioId;
 
     @OneToMany(
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            mappedBy = "portfolio",
+            orphanRemoval = true
     )
-    @JoinColumn(
-            name = "portfolio_id",
-            referencedColumnName = "portfolio_id"
-    )
-    private List<Investment> investments;
+    @JsonManagedReference
+    private List<@Valid Investment> investments;
 
     @OneToOne
     @JoinColumn(
             name = "user_id",
             referencedColumnName = "user_id"
     )
+
     private User user;
 }

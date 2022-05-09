@@ -11,3 +11,10 @@ REST is an abbreviation for Representational State Transfer, SIP is nothing but 
 - MySQl Driver
 - Spring Data JPA
 - Lombok
+
+##Technologies Used
+- Spring Boot
+- Mysql
+- Redis
+- Elasticsearch
+- Docker
